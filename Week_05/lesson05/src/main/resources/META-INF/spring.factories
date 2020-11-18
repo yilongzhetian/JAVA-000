@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.ylzt.geekbang.lesson05.starter.SchoolAutoConfiguration

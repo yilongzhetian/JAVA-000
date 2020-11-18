@@ -1,0 +1,10 @@
+{
+  "properties": [
+    {
+      "name": "school.enabled",
+      "type": "java.lang.Boolean",
+      "description": "school enable",
+      "defaultValue": false
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <beans>
+        <bean id="xml" class="com.ylzt.geekbang.lesson05.bean.Student">
+            <property name="name" value="小明-xml"></property>
+            <property name="gender" value="男"></property>
+        </bean>
+
+        <bean id="studentFactory" class="com.ylzt.geekbang.lesson05.bean.StudentFactory"></bean>
+        <bean id="factory" factory-bean="studentFactory" factory-method="create"  ></bean>
+    </beans>
+</beans>
