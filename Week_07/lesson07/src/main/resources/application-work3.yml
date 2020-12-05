@@ -1,0 +1,23 @@
+spring:
+  shardingsphere:
+    datasource:
+      names: ds0,ds1
+    ds0:
+      jdbc-url: jdbc:mysql://localhost:3306/shop?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+      type: com.zaxxer.hikari.HikariDataSource
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password:
+    ds1:
+      jdbc-url: jdbc:mysql://localhost:3306/shop1?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+      type: com.zaxxer.hikari.HikariDataSource
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password:
+    rules:
+      replica-query:
+        data-sources:
+          pr_ds:
+            primary-data-source-name: ds0
+            replica-data-source-names: ds1
+
