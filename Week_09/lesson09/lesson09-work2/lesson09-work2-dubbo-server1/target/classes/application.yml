@@ -1,0 +1,35 @@
+spring:
+    main:
+        allow-bean-definition-overriding: true
+    datasource:
+        driver-class-name:  com.mysql.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/test0?useUnicode=true&characterEncoding=utf8&useSSL=false
+        username: root
+        password:
+
+mybatis:
+  type-aliases-package: com.ylzt.geekbang.lesson09.work2.server1.entity
+  config-location: classpath:mybatis/mybatis-config.xml
+
+logging:
+  level:
+    root: error
+    org.springframework.web: info
+    org.apache.ibatis: debug
+    org.dromara.hmily.demo.bonuspoint: debug
+    org.dromara.hmily.demo.lottery: debug
+    org.dromara.hmily.demo: debug
+
+dubbo:
+  scan:
+    base-packages: com.ylzt.geekbang.lesson09.work2.server1.service
+  registry:
+    address: N/A
+  protocol:
+    name: dubbo
+    port: 20880
+  application:
+    id: server1
+
+
+

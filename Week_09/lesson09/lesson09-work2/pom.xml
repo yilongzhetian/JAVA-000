@@ -10,6 +10,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>lesson09-work2</artifactId>
-
+    <packaging>pom</packaging>
+    <modules>
+        <module>lesson09-work2-dubbo-api</module>
+        <module>lesson09-work2-dubbo-server1</module>
+        <module>lesson09-work2-dubbo-server2</module>
+        <module>lesson09-work2-dubbo-cilent</module>
+    </modules>
 
 </project>

@@ -59,7 +59,7 @@ public class RpcfxServerApplication {
 	// annotation
 
 
-	@Bean(name = "com.ylzt.geekbang.lesson09.work1.rpcfx.api..UserService")
+	@Bean(name = "com.ylzt.geekbang.lesson09.work1.rpcfx.api.UserService")
 	public UserService createUserService(){
 		return new UserServiceImpl();
 	}

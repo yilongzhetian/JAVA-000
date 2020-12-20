@@ -1,0 +1,6 @@
+com/ylzt/geekbang/lesson09/work2/server2/entity/Frozen.class
+com/ylzt/geekbang/lesson09/work2/server2/Server2DubboApplication.class
+com/ylzt/geekbang/lesson09/work2/server2/service/AccountBServiceImpl.class
+com/ylzt/geekbang/lesson09/work2/server2/mapper/FrozenMapper.class
+com/ylzt/geekbang/lesson09/work2/server2/mapper/AccountMapper.class
+com/ylzt/geekbang/lesson09/work2/server2/entity/Account.class
