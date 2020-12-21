@@ -13,11 +13,11 @@ public interface AccountMapper {
 
 
 
-    @Update("update account set uk_money=uk_money-#{dollar},cny_money=cny_money+#{cny} where account_id=#{account_id} and uk_money>0")
+    @Update("update account set usd_money=usd_money-#{dollar},cny_money=cny_money+#{cny} where account_id=#{accountB} and usd_money>0")
     int update(TradeDTO tradeDTO);
 
 
-    @Update("update account set uk_money=uk_money+#{dollar}, cny_money=cny_money-#{cny} where account_id=#{account_id}")
+    @Update("update account set usd_money=usd_money+#{dollar}, cny_money=cny_money-#{cny} where account_id=#{accountB}")
     int cancel(TradeDTO tradeDTO);
 
 

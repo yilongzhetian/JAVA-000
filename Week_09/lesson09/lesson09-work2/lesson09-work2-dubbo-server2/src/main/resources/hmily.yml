@@ -1,10 +1,10 @@
 hmily:
   server:
     configMode: local
-    appName: server1-sc
+    appName: server2-sc
   #  如果server.configMode eq local 的时候才会读取到这里的配置信息.
   config:
-    appName: server1-sc
+    appName: server2-sc
     serializer: kryo
     contextTransmittalMode: threadLocal
     scheduledThreadMax: 16

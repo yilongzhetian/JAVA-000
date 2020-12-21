@@ -13,11 +13,11 @@ public interface FrozenMapper {
 
 
 
-    @Update("update frozen set uk_frozen=uk_frozen+#{dollar} where account_id=#{account_id}")
+    @Update("update frozen set usd_frozen=usd_frozen+#{dollar} where account_id=#{accountB}")
     int frozenUk(TradeDTO dto);
 
 
-    @Update("update frozen set uk_frozen=uk_frozen-#{dollar} where account_id=#{account_id} and uk_frozen>0")
+    @Update("update frozen set usd_frozen=usd_frozen-#{dollar} where account_id=#{accountB} and usd_frozen>0")
     int unfrozenUk(TradeDTO dto);
 
 }

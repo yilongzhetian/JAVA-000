@@ -6,6 +6,7 @@ import com.ylzt.geekbang.lesson09.work2.server1.mapper.AccountMapper;
 import com.ylzt.geekbang.lesson09.work2.server1.mapper.FrozenMapper;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.dromara.hmily.annotation.HmilyTCC;
+import org.dromara.hmily.common.exception.HmilyRuntimeException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,17 +30,28 @@ public class AccountAServiceImpl implements AccountAService {
     @Transactional
     @Override
     public boolean transfer(TradeDTO dto) {
+        buildTradeDTO(dto);
         return accountMapper.update(dto)>0&&frozenMapper.frozenCny(dto)>0;
+    }
+
+    @HmilyTCC(confirmMethod = "confirm", cancelMethod = "cancel")
+    @Transactional
+    @Override
+    public boolean transferWithException(TradeDTO dto) {
+        throw new HmilyRuntimeException("账户A转账失败");
     }
 
 
     public  boolean confirm(TradeDTO dto){
-      return  frozenMapper.unfrozenCny(dto)>0;
+        buildTradeDTO(dto);
+        return  frozenMapper.unfrozenCny(dto)>0;
     }
 
 
-    public  boolean cancel(TradeDTO dto){
-        return accountMapper.cancel(dto)>0&&frozenMapper.unfrozenCny(dto)>0;
+    public  boolean cancel(TradeDTO dto)
+    {
+        buildTradeDTO(dto);
+        return frozenMapper.unfrozenCny(dto)>0&&accountMapper.cancel(dto)>0;
     }
 
 

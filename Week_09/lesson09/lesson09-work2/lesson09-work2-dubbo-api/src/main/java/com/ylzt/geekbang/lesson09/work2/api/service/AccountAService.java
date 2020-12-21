@@ -6,4 +6,6 @@ public interface AccountAService {
 
     boolean transfer(TradeDTO dto);
 
+    boolean transferWithException(TradeDTO dto);
+
 }

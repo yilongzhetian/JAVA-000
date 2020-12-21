@@ -9,7 +9,7 @@ import lombok.Data;
  * @Date: 2020/12/20 8:16 上午
  **/
 @Data
-public class TradeDTO {
+public class TradeDTO implements java.io.Serializable{
 
   private int accountA;
 

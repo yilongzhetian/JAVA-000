@@ -40,5 +40,9 @@ public class PayService {
 
     }
 
-
+    @HmilyTCC
+    public void payWithException(TradeDTO dto) {
+        accountAService.transferWithException(dto);
+        accountBService.transfer(dto);
+    }
 }

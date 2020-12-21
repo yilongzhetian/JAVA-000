@@ -30,4 +30,11 @@ public class PayController {
         return "success";
     }
 
+    @PostMapping(value = "/pay/exception")
+    public String payWithException(@RequestBody TradeDTO dto){
+        payService.payWithException(dto);
+        return "success";
+    }
+
+
 }

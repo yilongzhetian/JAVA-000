@@ -29,17 +29,20 @@ public class AccountBServiceImpl implements AccountBService {
     @Transactional
     @Override
     public boolean transfer(TradeDTO dto) {
+        buildTradeDTO(dto);
         return accountMapper.update(dto)>0&&frozenMapper.frozenUk(dto)>0;
     }
 
 
     public  boolean confirm(TradeDTO dto){
-      return  frozenMapper.unfrozenUk(dto)>0;
+        buildTradeDTO(dto);
+        return  frozenMapper.unfrozenUk(dto)>0;
     }
 
     @Transactional
     public  boolean cancel(TradeDTO dto){
-        return accountMapper.cancel(dto)>0&&frozenMapper.unfrozenUk(dto)>0;
+        buildTradeDTO(dto);
+        return frozenMapper.unfrozenUk(dto)>0&&accountMapper.cancel(dto)>0;
     }
 
 

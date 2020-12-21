@@ -20,11 +20,11 @@ public interface FrozenMapper {
     int save(Frozen frozen);*/
 
 
-    @Update("update frozen set cny_frozen=cny_frozen+#{cny} where account_id=#{account_id}")
+    @Update("update frozen set cny_frozen=cny_frozen+#{cny} where account_id=#{accountA}")
     int frozenCny(TradeDTO dto);
 
 
-    @Update("update frozen set cny_frozen=cny_frozen-#{cny} where account_id=#{account_id} and cny_frozen>0")
+    @Update("update frozen set cny_frozen=cny_frozen-#{cny} where account_id=#{accountA} and cny_frozen>0")
     int unfrozenCny(TradeDTO dto);
 
 }
